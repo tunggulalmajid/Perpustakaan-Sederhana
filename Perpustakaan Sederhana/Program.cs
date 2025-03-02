@@ -28,7 +28,8 @@ internal class Program
                 }
                 else if (pilihOpsi == 2)
                 {
-                    Console.WriteLine("haha");
+                    LihatBuku();
+                    break;
 
                 }
                 else if (pilihOpsi == 3)
@@ -66,6 +67,7 @@ internal class Program
     }
     static void tambahBuku()
     {
+        penyimpananBuku simpan = new penyimpananBuku();
         string kategori;
         string judulBuku;
         int tahunTerbit;
@@ -73,28 +75,13 @@ internal class Program
 
         Console.Clear();
         header();
-        while (true)
-        {
-            try
-            {
-                Console.Write("Masukkan Kategori Buku >> ");
-                kategori = Console.ReadLine();
-                break;
-            }
-            catch (Exception e){ Console.WriteLine($"Error : {e.Message}"); }
-        }
-
-        while (true)
-        {
-            try
-            {
-                Console.Write("Masukkan Judul Buku >> ");
-                judulBuku = Console.ReadLine();
-                break;
-            }
-            catch (Exception e) { Console.WriteLine($"Error : {e.Message}"); }
-        }
-
+       
+        Console.Write("Masukkan Kategori Buku >> ");
+        kategori = Console.ReadLine();
+            
+        Console.Write("Masukkan Judul Buku >> ");
+        judulBuku = Console.ReadLine();
+            
         while (true)
         {
             try
@@ -106,25 +93,26 @@ internal class Program
             catch (Exception e) { Console.WriteLine($"Error : {e.Message}"); }
         }
 
-        while (true)
-        {
-            try
-            {
-                Console.Write("Masukkan Nomor Buku >> ");
-                nomorBuku = Console.ReadLine();
-                break;
-            }
-            catch (Exception e) { Console.WriteLine($"Error : {e.Message}"); }
-        }
-
-
+       
+        Console.Write("Masukkan Nomor Buku >> ");
+        nomorBuku = Console.ReadLine();
+        
         Console.Clear();
         header();
         Buku buku = new Buku(kategori,judulBuku,tahunTerbit,nomorBuku);
-        penyimpananBuku simpan = new penyimpananBuku();
         simpan.simpanBuku(buku);
         buku.tambahBukuBerhasil();
-
         garis(60);
+
+        LihatBuku();
+
+    }
+    static void LihatBuku()
+    {
+        penyimpananBuku simpan = new penyimpananBuku();
+
+        Console.Clear();
+        header();
+        simpan.lihatBuku();
     }
 }

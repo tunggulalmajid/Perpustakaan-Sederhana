@@ -8,6 +8,7 @@ namespace Perpustakaan_Sederhana
 {
     public class penyimpananBuku
     {
+        Buku buku;
         private List<Buku> tempatBuku;
         public penyimpananBuku() 
         {
@@ -18,7 +19,23 @@ namespace Perpustakaan_Sederhana
         {
             tempatBuku.Add(nama);
         }
-         
+        public void lihatBuku()
+        {
+
+            if (tempatBuku.Count > 0)
+            {
+                Console.WriteLine("Buku yang Tersimpan :");
+                foreach (var item in tempatBuku)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            else
+            {
+                Console.WriteLine("tidak ada buku tersimpan");
+            }
+            
+        }
 
 
     }
