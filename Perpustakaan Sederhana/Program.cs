@@ -66,17 +66,57 @@ internal class Program
     }
     static void tambahBuku()
     {
+        string kategori;
+        string judulBuku;
+        int tahunTerbit;
+        string nomorBuku;
+
         Console.Clear();
         header();
+        while (true)
+        {
+            try
+            {
+                Console.Write("Masukkan Kategori Buku >> ");
+                kategori = Console.ReadLine();
+                break;
+            }
+            catch (Exception e){ Console.WriteLine($"Error : {e.Message}"); }
+        }
 
-        Console.Write("Masukkan Kategori Buku >> ");
-        string kategori = Console.ReadLine();
-        Console.Write("Masukkan Judul Buku >> ");
-        string judulBuku = Console.ReadLine();
-        Console.Write("Masukkan Tahun Terbit >> ");
-        int tahunTerbit = Convert.ToInt32(Console.ReadLine());
-        Console.Write("Masukkan Nomor Buku >> ");
-        string nomorBuku = Console.ReadLine();
+        while (true)
+        {
+            try
+            {
+                Console.Write("Masukkan Judul Buku >> ");
+                judulBuku = Console.ReadLine();
+                break;
+            }
+            catch (Exception e) { Console.WriteLine($"Error : {e.Message}"); }
+        }
+
+        while (true)
+        {
+            try
+            {
+                Console.Write("Masukkan Tahun Terbit >> ");
+                tahunTerbit = Convert.ToInt32(Console.ReadLine());
+                break;
+            }
+            catch (Exception e) { Console.WriteLine($"Error : {e.Message}"); }
+        }
+
+        while (true)
+        {
+            try
+            {
+                Console.Write("Masukkan Nomor Buku >> ");
+                nomorBuku = Console.ReadLine();
+                break;
+            }
+            catch (Exception e) { Console.WriteLine($"Error : {e.Message}"); }
+        }
+
 
         Console.Clear();
         header();
