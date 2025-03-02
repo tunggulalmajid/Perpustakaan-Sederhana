@@ -1,4 +1,5 @@
 ﻿using System.Timers;
+using Perpustakaan_Sederhana;
 
 internal class Program
 {
@@ -22,7 +23,8 @@ internal class Program
                 int pilihOpsi = Convert.ToInt32(Console.ReadLine());
                 if (pilihOpsi == 1)
                 {
-                    Console.WriteLine("haha");
+                    tambahBuku();
+                    break;
                 }
                 else if (pilihOpsi == 2)
                 {
@@ -61,5 +63,25 @@ internal class Program
         Console.WriteLine("PERPUSTAKAAN SEDERHANA".PadLeft(40));
         garis(60);
 
+    }
+    static void tambahBuku()
+    {
+        Console.Clear();
+        header();
+
+        Console.Write("Masukkan Kategori Buku >> ");
+        string kategori = Console.ReadLine();
+        Console.Write("Masukkan Judul Buku >> ");
+        string judulBuku = Console.ReadLine();
+        Console.Write("Masukkan Tahun Terbit >> ");
+        int tahunTerbit = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Masukkan Nomor Buku >> ");
+        string nomorBuku = Console.ReadLine();
+
+        Console.Clear();
+        header();
+        Buku buku = new Buku(kategori,judulBuku,tahunTerbit,nomorBuku);
+        buku.tambahBukuBerhasil();
+        garis(60);
     }
 }
