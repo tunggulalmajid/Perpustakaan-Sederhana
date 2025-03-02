@@ -121,7 +121,10 @@ internal class Program
         Console.Clear();
         header();
         Buku buku = new Buku(kategori,judulBuku,tahunTerbit,nomorBuku);
+        penyimpananBuku simpan = new penyimpananBuku();
+        simpan.simpanBuku(buku);
         buku.tambahBukuBerhasil();
+
         garis(60);
     }
 }

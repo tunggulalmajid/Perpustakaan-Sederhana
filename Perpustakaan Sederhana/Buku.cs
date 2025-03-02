@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Perpustakaan_Sederhana
 {
-    internal class Buku
+    public class Buku
     {
         public string Kategori { get; set; }
         public string Judul { get; set; }

@@ -6,8 +6,20 @@ using System.Threading.Tasks;
 
 namespace Perpustakaan_Sederhana
 {
-    internal class penyimpananBuku
+    public class penyimpananBuku
     {
+        private List<Buku> tempatBuku;
+        public penyimpananBuku() 
+        {
+            tempatBuku = new List<Buku> ();
+        }
+
+        public void simpanBuku(Buku nama)
+        {
+            tempatBuku.Add(nama);
+        }
+         
+
 
     }
 }
