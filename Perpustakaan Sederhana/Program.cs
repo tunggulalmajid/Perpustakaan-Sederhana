@@ -59,7 +59,8 @@ internal class Program
                 }
                 else if (pilihOpsi == 3)
                 {
-                    Console.WriteLine("haha");
+                    HapusBuku();
+                    break;
                 }
                 else if (pilihOpsi == 4)
                 {
@@ -128,5 +129,38 @@ internal class Program
         garis(60);
         enter();
         awalProgram();
+    }
+    static void HapusBuku()
+    {
+        Console.Clear();
+        header();
+        simpan.lihatBuku();
+        garis(60);
+
+        int hapus;
+
+        while (true)
+        {
+            try
+            {
+                Console.Write("Masukkan nomor buku yang ingin dihapus >> ");
+                hapus = Convert.ToInt32(Console.ReadLine());
+                int jumlahBuku = simpan.jumlahBuku();
+                if (hapus > jumlahBuku || hapus < 1)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+                else
+                {
+                    break;
+                }
+            }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+        }
+
+        simpan.hapusBuku(hapus - 1);
+        enter();
+        awalProgram();  
+
     }
 }

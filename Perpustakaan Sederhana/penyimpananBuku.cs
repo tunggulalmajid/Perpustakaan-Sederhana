@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace Perpustakaan_Sederhana
 {
+    
     public class penyimpananBuku
     {
         Buku buku;
         private List<Buku> tempatBuku;
+        public int jumlahBuku()
+        {
+            return tempatBuku.Count;
+        }
         public penyimpananBuku() 
         {
             tempatBuku = new List<Buku> ();
@@ -36,7 +41,12 @@ namespace Perpustakaan_Sederhana
             }
             
         }
-
+        
+        public void hapusBuku(int indeks)
+        {
+            tempatBuku.RemoveAt(indeks);
+            Console.WriteLine("Buku telah berhasil dihapus...");
+        }
 
     }
 }
