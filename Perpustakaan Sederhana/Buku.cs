@@ -30,5 +30,10 @@ namespace Perpustakaan_Sederhana
                 $"Buku berhasil ditambahkan...");
         }
 
+        public override string ToString()
+        {
+            return $"Kategori : {Kategori}, Judul Buku : {Judul}, Tahun terbit : {TahunTerbit}, Nomor Buku : {NomorBuku}  ";
+        }
+
     }
 }

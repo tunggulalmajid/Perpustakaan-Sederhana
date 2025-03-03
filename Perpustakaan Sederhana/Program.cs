@@ -1,9 +1,34 @@
-﻿using System.Timers;
+﻿using System.Security.Cryptography.X509Certificates;
+using System.Timers;
 using Perpustakaan_Sederhana;
 
 internal class Program
 {
+    public static penyimpananBuku simpan = new penyimpananBuku();
     public static void Main(string[] args)
+    {
+        
+        awalProgram();
+        Console.ReadLine();
+    }
+    static void enter()
+    {
+        Console.Write("Tekan enter untuk melanjutkan >> ");
+        Console.ReadLine() ;
+    }
+    
+    static void garis(int n)
+    {
+        Console.WriteLine(new string('═', n));
+    }
+    static void header()
+    {
+        garis(60);
+        Console.WriteLine("PERPUSTAKAAN SEDERHANA".PadLeft(40));
+        garis(60);
+
+    }
+    static void awalProgram()
     {
         Console.Clear();
         header();
@@ -35,7 +60,6 @@ internal class Program
                 else if (pilihOpsi == 3)
                 {
                     Console.WriteLine("haha");
-
                 }
                 else if (pilihOpsi == 4)
                 {
@@ -52,22 +76,11 @@ internal class Program
                 Console.WriteLine(e.Message);
             }
         }
-        Console.ReadLine();
-    }
-    static void garis(int n)
-    {
-        Console.WriteLine(new string('═', n));
-    }
-    static void header()
-    {
-        garis(60);
-        Console.WriteLine("PERPUSTAKAAN SEDERHANA".PadLeft(40));
-        garis(60);
-
     }
     static void tambahBuku()
     {
-        penyimpananBuku simpan = new penyimpananBuku();
+        
+        //penyimpananBuku simpan = new penyimpananBuku();
         string kategori;
         string judulBuku;
         int tahunTerbit;
@@ -103,16 +116,17 @@ internal class Program
         simpan.simpanBuku(buku);
         buku.tambahBukuBerhasil();
         garis(60);
-        simpan.lihatBuku();
-        //LihatBuku();
+        enter();
+        awalProgram();
 
     }
     static void LihatBuku()
     {
-        penyimpananBuku simpan = new penyimpananBuku();
-
         Console.Clear();
         header();
         simpan.lihatBuku();
+        garis(60);
+        enter();
+        awalProgram();
     }
 }
