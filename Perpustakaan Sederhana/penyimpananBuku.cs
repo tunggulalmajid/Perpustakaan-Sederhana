@@ -25,9 +25,14 @@ namespace Perpustakaan_Sederhana
             if (tempatBuku.Count > 0)
             {
                 Console.WriteLine("Buku yang Tersimpan :");
-                foreach (var item in tempatBuku)
+                //foreach (var item in tempatBuku)
+                //{
+                //    Console.WriteLine(item);
+                //}
+                for (int i = 0; i < tempatBuku.Count; i++)
                 {
-                    Console.WriteLine(item);
+                    Console.WriteLine (tempatBuku[i]);
+
                 }
             }
             else

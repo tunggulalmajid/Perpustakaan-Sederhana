@@ -103,8 +103,8 @@ internal class Program
         simpan.simpanBuku(buku);
         buku.tambahBukuBerhasil();
         garis(60);
-
-        LihatBuku();
+        simpan.lihatBuku();
+        //LihatBuku();
 
     }
     static void LihatBuku()
