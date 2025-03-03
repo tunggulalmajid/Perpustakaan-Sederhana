@@ -44,8 +44,10 @@ namespace Perpustakaan_Sederhana
         
         public void hapusBuku(int indeks)
         {
+ 
             tempatBuku.RemoveAt(indeks);
             Console.WriteLine("Buku telah berhasil dihapus...");
+           
         }
 
     }

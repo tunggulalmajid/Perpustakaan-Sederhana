@@ -64,7 +64,11 @@ internal class Program
                 }
                 else if (pilihOpsi == 4)
                 {
-                    Console.WriteLine("haha");
+                    Console.Clear() ;
+                    header();
+                    Console.WriteLine("Terima Kasih Telah Menggunakan Program ini...");
+                    garis(60);
+                    break;
 
                 }
                 else
@@ -134,33 +138,45 @@ internal class Program
     {
         Console.Clear();
         header();
-        simpan.lihatBuku();
-        garis(60);
-
+        int jumlahBuku = simpan.jumlahBuku();
         int hapus;
 
-        while (true)
+        if (jumlahBuku > 0)
         {
-            try
+            simpan.lihatBuku();
+            garis(60);
+
+
+            while (true)
             {
-                Console.Write("Masukkan nomor buku yang ingin dihapus >> ");
-                hapus = Convert.ToInt32(Console.ReadLine());
-                int jumlahBuku = simpan.jumlahBuku();
-                if (hapus > jumlahBuku || hapus < 1)
+                try
                 {
-                    throw new IndexOutOfRangeException();
+                    Console.Write("Masukkan nomor buku yang ingin dihapus >> ");
+                    hapus = Convert.ToInt32(Console.ReadLine());
+                    if (hapus > jumlahBuku || hapus < 1)
+                    {
+                        throw new IndexOutOfRangeException();
+                    }
+                    else
+                    {
+                        simpan.hapusBuku(hapus - 1);
+                        garis(60);
+                        enter();
+                        awalProgram();  
+                        break;
+                    }
                 }
-                else
-                {
-                    break;
-                }
+                catch (Exception e) { Console.WriteLine(e.Message); }
             }
-            catch (Exception e) { Console.WriteLine(e.Message); }
+        }
+        else
+        {
+            Console.WriteLine("tidak ada buku tersimpan ...");
+            garis(60);
+            enter();
+            awalProgram();
         }
 
-        simpan.hapusBuku(hapus - 1);
-        enter();
-        awalProgram();  
 
     }
 }
